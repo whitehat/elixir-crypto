@@ -78,7 +78,7 @@ defmodule ArkEcosystem.Crypto.Transactions.Transaction do
         length = byte_size(transaction.vendor_field)
 
         cond do
-          length < 64 ->
+          length < 65 ->
             diff = 64 - length
             transaction.vendor_field <> String.duplicate(<<0>>, diff)
 
